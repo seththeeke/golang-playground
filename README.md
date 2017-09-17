@@ -1,4 +1,4 @@
-#Golang Playground Project
+<h1>Golang Playground Project</h1>
 
 A space for me to play around with Go before I try to implement it in the mini microservice porject I'm building<br>
 
