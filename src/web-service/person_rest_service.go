@@ -8,8 +8,14 @@ import (
     "fmt"
 )
 
+type Person struct {
+    firstName string
+    lastName string
+    age  int
+}
+
 func main(){
-	fmt.Printf("Starting Test Web Service")
+	fmt.Printf("Starting Test Web Service\n")
 	router := mux.NewRouter()
 	router.HandleFunc("/people", GetPeople).Methods("GET")
     router.HandleFunc("/people/{id}", GetPerson).Methods("GET")
@@ -19,17 +25,21 @@ func main(){
 }
 
 func GetPeople(w http.ResponseWriter, r *http.Request) {
-	fmt.Printf("getting people\n")
+    larry := new(Person)
+    larry.firstName = "Larry"
+    larry.lastName = "Theeke"
+    larry.age = 240
+	fmt.Printf(larry.firstName + "\n")
 }
 
 func GetPerson(w http.ResponseWriter, r *http.Request) {
-	fmt.Printf("getting people\n")
+	fmt.Printf("getting person\n")
 }
 
 func CreatePerson(w http.ResponseWriter, r *http.Request) {
-	fmt.Printf("getting people\n")
+	fmt.Printf("creating people\n")
 }
 
 func DeletePerson(w http.ResponseWriter, r *http.Request) {
-	fmt.Printf("getting people\n")
+	fmt.Printf("deleting people\n")
 }
